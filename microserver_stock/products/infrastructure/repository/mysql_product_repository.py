@@ -8,7 +8,7 @@ from products.domain.entity.product import Products
 from products.domain.repository.product_repository import ProductsInterface
 
 class Product(Base):
-    __tablename__ = 'products'
+    __tablename__ = 'productos'
 
     id = Column(String(255), primary_key=True)
     name = Column(String(255))

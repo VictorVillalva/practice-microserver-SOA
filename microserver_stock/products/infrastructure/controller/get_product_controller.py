@@ -1,9 +1,7 @@
 from flask import Blueprint
-
 from products.application.useCases.get_product_use_case import GetProductUseCase
 
 get_inventory_blueprint = Blueprint('get_inventory', __name__)
-
 
 def initialize_endpoints(product_repository):
     get_inventory_use_case = GetProductUseCase(product_repository)

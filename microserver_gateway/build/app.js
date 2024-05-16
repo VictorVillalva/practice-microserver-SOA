@@ -10,7 +10,8 @@ const app = (0, express_1.default)();
 const signale = new signale_1.Signale();
 app.use(express_1.default.json);
 app.use('/api/v1/orders', (0, express_http_proxy_1.default)('http://localhost:8081'));
-app.use('/api/v1/products', (0, express_http_proxy_1.default)('http://localhost:8082'));
-app.listen(8080, () => {
-    signale.success("Server on line in port: 8080");
+app.use('/api/v1/stock', (0, express_http_proxy_1.default)('http://localhost:8082'));
+const PORT = 8080;
+app.listen(PORT, () => {
+    signale.success("Server on line in port: ", PORT);
 });

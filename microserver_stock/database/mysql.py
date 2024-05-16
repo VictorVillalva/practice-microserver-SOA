@@ -6,7 +6,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
 class DBConnection:
     def __init__(self):
         load_dotenv()
@@ -21,13 +20,13 @@ class DBConnection:
             self.engine = create_engine(f'mysql+pymysql://{user}:{password}@{host}:{port}/{database}')
             Base.metadata.create_all(self.engine)
             self.Session = sessionmaker(bind=self.engine)
-            print("Conexión exitosa a la base de datos con MySQL LISTA!")
+            print("Conexión exitosa a la BD!")
         except Exception as e:
-            print(f"Error al conectar a la base de datos: {str(e)}")
+            print(f"Error al conectarse a la BD: {str(e)}")
             self.Session = None
 
     def get_session(self):
         if self.Session is not None:
             return self.Session()
         else:
-            raise Exception("No se pudo establecer la conexión a la base de datos.")
+            raise Exception("No se logro establecer la conexion a la BD.")

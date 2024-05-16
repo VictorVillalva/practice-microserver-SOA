@@ -5,6 +5,6 @@ class DeleteProductUseCase:
     def execute(self, product_id):
         product_id= self.product_repository.get_id_product(product_id)
         if product_id is None:
-            raise Exception("Product not found")
+            raise Exception("Producto no encontrando en stock")
         else:
             return self.product_repository.remove_product(product_id)

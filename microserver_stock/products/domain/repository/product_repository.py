@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
-
 from products.domain.entity.product import Products
-
-
 class ProductsInterface(ABC):
 
     @abstractmethod

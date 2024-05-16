@@ -2,7 +2,6 @@ import {Signale} from "signale";
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 
-
 const signale = new Signale()
 dotenv.config()
 
