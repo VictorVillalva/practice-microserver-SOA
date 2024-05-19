@@ -6,10 +6,9 @@ export class CreateOrderController {
 
     async run(req:Request, res:Response){
         try{
-
-            const {total,date,status} = req.body
-            const order = await this.useCase.run(total,date,status)
-
+            const {date,status} = req.body
+            const {productId,units,total} = req.body.product
+            const order = await this.useCase.run(productId,units,total,date,status)
             if (order){
                 return res.status(201).send({
                     status:"Success",
