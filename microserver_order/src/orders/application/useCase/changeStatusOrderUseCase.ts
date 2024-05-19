@@ -11,4 +11,12 @@ export class ChangeStatusOrderUseCase{
             return null
         }
     }
+    async runView(orderId:string){
+        try {
+            return await this.repository.getOrderProducts(orderId)
+        }catch (e) {
+            console.log('Error -> ', e)
+            return null
+        }
+    }
 }
