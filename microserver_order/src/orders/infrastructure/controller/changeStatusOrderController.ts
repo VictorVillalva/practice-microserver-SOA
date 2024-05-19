@@ -4,7 +4,7 @@ import {RabbitMQ} from "../service/rabbitMQ";
 import {OrderProduct} from "../../domain/entity/orderProduct";
 
 export class ChangeStatusOrderController{
-    constructor(readonly useCase:ChangeStatusOrderUseCase, readonly mqtt:RabbitMQ) {}
+    constructor(readonly useCase: ChangeStatusOrderUseCase) {}
 
     async run(req:Request,res:Response){
         try {

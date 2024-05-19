@@ -1,6 +1,8 @@
 import { Order } from "../../domain/entity/order";
 import {query} from "../../../database/mysql";
 import {OrderRepository} from "../../domain/repository/orderRepository";
+import {OrderProduct} from "../../domain/entity/orderProduct";
+
 
 export class MysqlOrderRepository implements OrderRepository {
 
@@ -14,12 +16,15 @@ export class MysqlOrderRepository implements OrderRepository {
                 result = '';
                 for (let i = 0; i < 4; i++) {
                     result += randomNumbers[i] + namePrefix[i] + randomNumbers[i+1];
-                }}while (await this.getOrder(result))
+                }}while ( await this.getOrder(result))
+
             return result;
         }catch (e){
-            console.log(e)
+            console.log("Error en repository: \n",e)
+            return null;
         }
     }
+
     async getOrder(id:string){
         const sql = "SELECT * FROM orders WHERE id = ? AND deleted_at IS NULL"
         const params:any[]=[id]
@@ -28,11 +33,12 @@ export class MysqlOrderRepository implements OrderRepository {
             const order = result[0]
             return new Order(order.id,order.total,order.date,order.status,order.deleted_at)
         }catch (e) {
-            console.log(e)
+            console.log("Error en repository: \n",e)
             return null;
         }
     }
-    async create(total: number, date: Date, status: string): Promise<Order | null> {
+
+    async create(productId:string,units:number, total: number, date: Date, status: string): Promise<Order | null> {
         const id = await this.generateId()
         if (id!=undefined) {
             const sql = "INSERT INTO orders(id,total,date,status) VALUES(?,?,?,?)"
@@ -40,11 +46,14 @@ export class MysqlOrderRepository implements OrderRepository {
             try {
                 const [result]: any = await query(sql, params)
                 if (result) {
+                    const sql = "INSERT INTO orders_products(order_id,product_id,units,price) VALUES (?,?,?,?)"
+                    const params:any[]=[id,productId,units,total]
+                    const [result]:any=await query(sql,params)
                     return this.getOrder(id)
                 }
             } catch (e) {
                 console.log("Error en repository: \n",e)
-                return null
+                return null;
             }
         }
         return null
@@ -82,4 +91,22 @@ export class MysqlOrderRepository implements OrderRepository {
         }
 
     }
+
+    async getOrderProducts(orderId:string){
+        try {
+            const sql="SELECT * FROM orders_products WHERE order_id=? AND deleted_at IS NULL"
+            const params:any[]=[orderId]
+            const [results]:any=await query(sql,params)
+            if (results){
+                const result =results[0]
+                return new OrderProduct(orderId,result.product_id,result.units,result.price,null)
+            }else{
+                return null;
+            }
+        }catch (e) {
+            console.log("Error en repository: \n",e)
+            return null;
+        }
+    }
+
 }
