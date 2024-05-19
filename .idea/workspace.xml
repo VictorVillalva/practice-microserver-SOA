@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5db00f5f-3851-4198-a3c6-01a4f665ee47" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_gateway/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_gateway/src/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/.env" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/database/mysql.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/database/mysql.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/application/useCases/delete_product_use_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/application/useCases/delete_product_use_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/domain/entity/product.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/domain/entity/product.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/domain/repository/product_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/domain/repository/product_repository.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/infrastructure/controller/create_product_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/infrastructure/controller/create_product_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/infrastructure/controller/delete_product_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/infrastructure/controller/delete_product_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/infrastructure/controller/get_product_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/infrastructure/controller/get_product_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microserver_stock/products/infrastructure/repository/mysql_product_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/microserver_stock/products/infrastructure/repository/mysql_product_repository.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="practice-1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,10 +50,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "practice-1",
+    "git-widget-placeholder": "practice-2",
     "javascript.nodejs.core.library.configured.version": "16.15.1",
     "javascript.nodejs.core.library.typings.version": "16.18.97",
-    "last_opened_file_path": "D:/UNIVERSIDAD/CUATRIMESTRE 9/Aquitectura de Sistemas/Practica-2/proyectito-3/microserver_order",
+    "last_opened_file_path": "D:/UNIVERSIDAD/CUATRIMESTRE 9/Aquitectura de Sistemas/Practica-2/proyectito-3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,6 +105,8 @@
       <workItem from="1715755481110" duration="199000" />
       <workItem from="1715755867193" duration="595000" />
       <workItem from="1715805850763" duration="1596000" />
+      <workItem from="1715819814753" duration="663000" />
+      <workItem from="1716078424388" duration="2400000" />
     </task>
     <servers />
   </component>
