@@ -57,3 +57,12 @@ class ProductRepository(ProductsInterface):
         if isinstance(product_id, Product):
             product_id = product_id.id
         return self.session.query(Product).filter(Product.id == product_id, Product.deleted_at == None).first()
+
+    def reduce_stock(self, product_id, units):
+        product = self.get_id_product(product_id)
+        if product and product.stock >= units:
+            product.stock -= units
+            self.session.commit()
+            return product
+        else:
+            raise ValueError("No hay en stock")
